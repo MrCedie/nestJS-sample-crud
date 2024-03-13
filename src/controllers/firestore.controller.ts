@@ -28,9 +28,9 @@ export class FireStoreController {
   }
 
   @Post()
-  async addUser(@Body() body: any) {
-    await this.service.addUser(body);
-    return { message: 'Document added successfully' };
+  async addUser(@Body() body: any): Promise<any> {
+    const data = await this.service.addUser(body);
+    return data;
   }
 
   @Delete('/:id')
