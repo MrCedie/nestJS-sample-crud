@@ -23,8 +23,18 @@ export class FireStoreService {
     this.firestore = admin.firestore();
   }
 
-  async addUser(body: any): Promise<void> {
-    await this.firestore.collection('users').add(body);
+  async addUser(body: any): Promise<any> {
+    const document = (await this.firestore.collection('users').add(body)).get();
+    const id = (await document).id;
+
+    if ((await document).exists) {
+      const data = (await document).data();
+      return {
+        id: id,
+        ...data,
+      };
+    }
+    return null;
   }
 
   async getUsers(): Promise<any[]> {
