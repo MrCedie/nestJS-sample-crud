@@ -1,8 +1,9 @@
 export const firebaseConfig = {
-  apiKey: 'AIzaSyDUxN9jjVJxuXUxKGOVemlp4LQ1os-mn1w',
-  authDomain: 'sample-crud-d241f-1a120.firebaseapp.com',
-  projectId: 'sample-crud-d241f',
-  storageBucket: 'sample-crud-d241f.appspot.com',
-  messagingSenderId: '676422880005',
-  appId: '1:676422880005:web:4b995d1524a4371da6c56c',
+  apiKey: process.env.REACT_APP_VERCEL_API_KEY,
+  authDomain: process.env.REACT_APP_VERCEL_AUTH_DOMAIN,
+  databaseURL: process.env.REACT_APP_VERCEL_DATABASE_URL,
+  projectId: process.env.REACT_APP_VERCEL_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_VERCEL_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_VERCEL_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_VERCEL_APP_ID,
 };
